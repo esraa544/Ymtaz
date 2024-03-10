@@ -1,0 +1,885 @@
+/* ==================== GOOGLE FONTS ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --first-color: #DDB762;
+    --second-color: #112E4E;
+    --text-color-light: #fff;
+    --text-color-dark: #000;
+    --body-color: #F9F9F9;
+    /*========== Font and typography ==========*/
+    --body-font-family: "Almarai", sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px 11... */
+    --normal-font-size: 1.25rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --btn-font-size: 1rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== Margins Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --m-0-25: .25rem;
+    --m-0-5: .5rem;
+    --m-0-75: .75rem;
+    --m-1: 1rem;
+    --m-1-5: 1.5rem;
+    --m-2: 2rem;
+    --m-2-5: 2.5rem;
+    --m-3: 3rem;
+    --container-padding: 2rem;
+}
+
+/* Variable For large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --normal-font-size: 1.1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .875rem;
+
+        --container-padding: 4rem;
+    }
+}
+
+/*==================== BASE ====================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color-dark);
+    font-family: var(--body-font-family);
+    overflow-x: hidden;
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--body-font-family);
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+
+.container {
+    padding: var(--container-padding);
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none !important;
+}
+
+section {
+    position: relative;
+}
+
+span {
+    color: var(--first-color);
+    transition: .5s;
+}
+
+
+/*==================== NavBar ====================*/
+nav {
+    position: relative;
+    margin-bottom: -2rem;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    direction: rtl;
+    justify-content: space-between;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    z-index: 100;
+}
+nav .flex{
+    align-items: center;
+}
+nav img{
+    width: 100%;
+    max-width: 138.28px;
+}
+
+nav a{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #2C4768;
+    padding: 8px;
+    margin: 0 10px;
+    border-radius: 50px;
+    background-color: #fff;
+    transition: .5s;
+}
+nav .active,
+nav a:hover{
+    color: #fff;
+    padding: 14px 33px;
+    background-color: #2C4768;
+}
+
+.res_nav{
+    position: absolute;
+    top: 87px;
+    width: 100%;
+    padding: 1rem;
+    text-align: right;
+    background-color: #2C4768;
+    box-shadow: 0px 2px 6px #7777776b;
+    z-index: 99;
+    transition: .5s;
+}
+.res_nav a{
+    color: #fff;
+    padding: 14px 33px;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    background-color: transparent;
+    margin: 0;
+    transition: .5s;
+}
+.res_nav a:last-child{
+    border-bottom: none;
+}
+.res_nav a:hover{
+    margin-right: 1rem;
+}
+.close{
+    top: -100% !important;
+}
+
+
+/* ==================== header ==================== */
+header{
+    position: relative;
+    top: 1rem;
+    padding: 0 4rem;
+    /* margin-top: -6rem; */
+    margin-bottom: 2rem;
+    grid-template-columns: 1fr 1fr;
+    background: var(--second-color);
+    opacity: 0.9;
+    color: #fff;
+    text-align: right;
+    overflow: hidden;
+    /* max-height: 100vh; */
+}
+
+header .header_img img{
+    position: relative;
+    top: 186.39px;
+    max-width: 1101px;
+    max-height: 734.25px;
+}
+header .socialMedia_icons{
+    position: absolute;
+    top: 3rem;
+    left: 81px;
+}
+.socialMedia_icons{
+    gap: 10px;
+}
+.socialMedia_icons a{
+    color: #fff;
+}
+
+header .header_content {
+    display: grid;
+    padding-bottom: 2rem;
+    justify-items: end;
+    /* gap: 2rem; */
+    align-items: end;
+}
+header .header_content .grid{
+
+    gap: 2rem;
+}
+header .header_content .flex{
+    gap: 1rem;
+    flex-direction: row-reverse;
+}
+header .header_content h1{
+    font-size: 47.98px;
+}
+header .header_content p{
+    font-size: 26.17px;
+    line-height: 1.6;
+}
+header .header_content a{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 13.08px 39.25px;
+    border-radius: 8.72px;
+    border: 1px solid var(--first-color);
+    color: #fff;
+    line-height: 26.17px;
+    transition: .4s;
+}
+header .header_content a:first-child{
+    background:  var(--first-color);
+}
+header .header_content a:last-child:hover{
+    background:  var(--first-color);
+}
+header .stores_icons img{
+    max-width: 140px;
+    border-radius: 4px;
+}
+
+/* ==================== Section 1 - 5  ==================== */
+
+.consultingSystem{
+    padding: 50px 107.38px;
+    text-align: right;
+    gap: 4rem;
+}
+.consultingSystem h2{
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 13.46px;
+}
+.consultingSystem .System_content,
+.consultingSystem .supportive_systems{
+    flex-direction: row-reverse;
+    text-align: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.consultingSystem .System_content .System_card{
+    padding: 2rem 3rem;
+    justify-items: center;
+    border-radius: 18px;
+    opacity: 0.8;
+    box-shadow: 0px 2px 4px -2px #1018280F,
+                0px 4px 8px -2px #1018281A;
+    transition: .5s;
+}
+.consultingSystem .System_content .SystemCard_icon{
+    display: grid;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    justify-items: center;
+    align-items: center;
+
+}
+.consultingSystem .System_content .SystemCard_icon img{
+    max-width: 31px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.consultingSystem h3{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    max-width: 200px;
+    transition: .1s;
+}
+.consultingSystem p{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    max-width: 200px;
+    transition: .1s;
+}
+
+.consultingSystem .System_content .System_card:first-child,
+.consultingSystem .System_content .System_card:hover,
+.consultingSystem .digital_evidence .System_card:first-child:hover{
+    background: linear-gradient(136.97deg, #DDB762 3.34%, #000000 225.23%);
+    color: #fff;
+}
+.consultingSystem .System_content .System_card:first-child .SystemCard_icon{
+    background: linear-gradient(136.97deg, #DDB762 3.34%, #000000 225.23%);
+}
+.consultingSystem .digital_evidence .System_card:first-child{
+    background: inherit;
+    color: #000;
+
+}
+.consultingSystem .digital_evidence .System_card:first-child .SystemCard_icon{
+    background: #fff;
+}
+
+/* ==================== Section6: الأنظمة المساندة  ==================== */
+.supportive_systems .System_card{
+    padding: 1rem .5rem;
+    grid-template-columns: auto auto;
+    direction: rtl;
+    border-radius: 18px;
+    background-color: #fff;
+    gap: 10px;
+}
+.supportive_systems .System_card h3{
+    color: #292019;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+}
+.supportive_systems .System_card img{
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
+}
+.supportive_systems .System_card .supportiveCard_img{
+    padding: 1rem 1.5rem;
+    background: #D9D9D9;
+    border-radius: 8px;
+}
+.supportiveCard_img div{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 20px 25px 70px 0px #F9DAD5CC;
+}
+/* ==================== Section 7 - 8 ==================== */
+
+.consultingSystem .sliderCard_img img{
+    max-width: 141.34px;
+    max-height: 141.34px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.consultingSystem .card-wrapper{
+    display: grid !important;
+    justify-content: center;
+    padding: 28.27px 22.61px 22.61px;
+    gap: 1rem;
+    text-align: center;
+    border: 1.41px solid #E0E6ED;
+    border-radius: 18px;
+    box-shadow: 0px 4.946949005126953px 9.893898010253906px 0px #D3DAE2;
+    transition: .3s;
+}
+.consultingSystem .card-slider0 .card-wrapper:hover{
+    background: linear-gradient(136.97deg, #DDB762 3.34%, #000000 225.23%);
+    opacity: 0.8;
+    color: #fff;
+}
+.consultingSystem .card-wrapper p{
+    margin: 10px;
+}
+.slick-slide {
+    padding: 2em .5em;
+}
+
+/* slider dots */
+
+.slick-dots li.slick-active button:before {
+    color: var(--first-color) !important;
+}
+.slick-dots li button:before {
+    font-size: 18px !important;
+    opacity: 1 !important;
+    color: #D9D9D9 !important;
+}
+/* slider arrows */
+.slick-prev {
+    left: -9.5% !important;
+}
+.slick-next{
+    right: -9.5% !important;
+}
+.slick-prev:before {
+    content: url(../img/arrow-left.svg) !important; 
+}
+.slick-next:before {
+    content: url(../img/arrow-right.svg) !important; 
+}
+
+/* Partners and sponsors Slider */
+.card-slider1 .card-wrapper{
+    border-radius: 50%;
+    max-width: 254.3px;
+    max-height: 254.3px;
+    align-items: center;
+    box-shadow: 0px 4px 7px 0px #00000026;
+}
+.card-slider1 .card-wrapper img{
+    width: 100%;
+    filter: invert(1);
+}
+
+
+
+/* ==================== Footer ==================== */
+footer {
+    position: relative;
+    text-align: center;
+    padding: 4.231rem 4.231rem 0;
+    margin-top: 2rem;
+    direction: rtl;
+    background-color: rgba(11, 33, 60, 0.9);
+    background-image: url(../img/footer.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-blend-mode: color-burn;
+    color: #fff;
+    gap: 1rem;
+}
+
+footer .footer_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: right;
+    gap: 1rem;
+}
+footer .footer_content p{
+    max-width: 411.67px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    letter-spacing: 1px;
+}
+footer div img{
+    max-width: 152.38px;
+}
+footer .system_contact img{
+    max-width: 30px;
+}
+footer .system_contact p{
+    max-width: 344.67px;
+}
+footer .system_contact{
+    grid-template-columns: auto auto;
+}
+footer .system_contact i{
+    color: #DDB762;
+    font-size: 30px;
+} 
+footer .system_contact .flex{
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+footer .stores{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #FFFFFF;
+    gap: 1rem;
+}
+footer .stores .socialMedia_icons{
+    display: flex;
+    gap: 1rem;
+}
+footer .stores .socialMedia_icons a {
+    font-size: 32px;
+}
+footer .stores .stores_icons{
+    display: flex;
+    gap: 10px;
+}
+footer h4{
+    padding: 0 1rem 1rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.9px;
+}
+/* ==================== RESPONSIVE ==================== */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 346px) {
+    nav .flex{
+        display: none;
+    }
+    header{
+        grid-template-columns: auto;
+        padding: 4rem 1rem 2rem;
+        margin-top: 0;
+        overflow: initial;
+    }
+    header .header_content h1 {
+        font-size: 35px;
+    }
+    header .header_content p {
+        font-size: 20px;
+    }
+
+    header .header_content a {
+        padding: 13.08px 35px;
+    }
+    header .header_img {
+        display: none;
+    }
+    header .socialMedia_icons {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    .stores_icons img {
+        max-width: 120px;
+        border-radius: 4px;
+    }
+    .consultingSystem {
+        padding: 1rem;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    .consultingSystem h2 {
+        font-size: 34px;
+        line-height: 1;
+    }
+    .consultingSystem h3 {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .consultingSystem p {
+        font-size: 18px;
+    }
+    .consultingSystem .System_content,
+    .consultingSystem .supportive_systems {
+        justify-content: center;
+        gap: 2rem;
+    }
+    .supportive_systems .System_card {
+        padding: 1rem;
+    }
+    .card-slider1 .card-wrapper img {
+        max-height: 80px;
+    }
+    .supportive_systems .System_card .supportiveCard_img {
+        padding: 1rem;
+    }
+    .supportiveCard_img div {
+        width: 45px;
+        height: 45px;
+        overflow: hidden;
+    }
+    footer {
+        padding:2rem 1rem 0;
+        margin-top: 0;
+    }
+    footer .system_contact {
+        grid-template-columns: auto;
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 346px) and (max-width: 600px) {
+    nav .flex{
+        display: none;
+    }
+    header{
+        grid-template-columns: auto;
+        padding: 4rem 1rem 2rem;
+        margin-top: 0;
+        overflow: initial;
+    }
+    header .header_content h1 {
+        font-size: 35px;
+    }
+    header .header_content p {
+        font-size: 20px;
+    }
+
+    header .header_content a {
+        padding: 13.08px 35px;
+    }
+    header .header_img {
+        order: 2;
+    }
+    header .header_img img {
+        position: relative;
+        top: auto;
+        max-width: 300px;
+    }
+    header .socialMedia_icons {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    .stores_icons img {
+        max-width: 120px;
+        border-radius: 4px;
+    }
+    .consultingSystem {
+        padding: 40px;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    .consultingSystem h2 {
+        font-size: 34px;
+        line-height: 1;
+    }
+    .consultingSystem h3 {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .consultingSystem p {
+        font-size: 18px;
+    }
+    .consultingSystem .System_content,
+    .consultingSystem .supportive_systems {
+        justify-content: center;
+        gap: 2rem;
+    }
+    .supportive_systems .System_card {
+        padding: 1rem;
+    }
+    .card-slider1 .card-wrapper img {
+        max-height: 80px;
+    }
+    footer {
+        padding: 3rem 3rem 0;
+        margin-top: 0;
+    }
+    footer .system_contact {
+        grid-template-columns: auto;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    nav .flex{
+        display: none;
+    }
+    header{
+        /* grid-template-columns: auto; */
+        padding: 4rem 1rem 2rem;
+        margin-top: 0;
+        overflow: initial;
+    }
+    header .header_content h1 {
+        font-size: 35px;
+    }
+    header .header_content p {
+        font-size: 20px;
+    }
+    header .header_content a {
+        padding: 13.08px 35px;
+    }
+    header .header_img img {
+        position: relative;
+        top: auto;
+        max-width: 300px;
+    }
+    header .socialMedia_icons {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    .stores_icons img {
+        max-width: 120px;
+        border-radius: 4px;
+    }
+    .consultingSystem {
+        padding: 40px;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .consultingSystem h2 {
+        font-size: 34px;
+        line-height: 1;
+    }
+    .consultingSystem h3 {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .consultingSystem p {
+        font-size: 18px;
+    }
+    .consultingSystem .System_content,
+    .consultingSystem .supportive_systems {
+        justify-content: center;
+        gap: 2rem;
+    }
+    .supportive_systems .System_card {
+        padding: 1rem;
+    }
+    footer {
+        padding: 3rem 3rem 0;
+        margin-top: 0;
+    }
+    footer .system_contact {
+        grid-template-columns: auto;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    nav {
+        padding: 0.5rem 1rem;
+    }
+    nav a{
+        margin: 0 3px;
+    }
+    header{
+        /* grid-template-columns: auto; */
+        padding: 4rem 1rem 2rem;
+        margin-top: 0;
+        overflow: initial;
+    }
+    header .header_content h1 {
+        font-size: 35px;
+    }
+    header .header_content p {
+        font-size: 20px;
+    }
+
+    header .header_content a {
+        padding: 13.08px 35px;
+    }
+    header .header_img img {
+        position: relative;
+        top: auto;
+        max-width: 300px;
+    }
+    header .socialMedia_icons {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    .stores_icons img {
+        max-width: 120px;
+        border-radius: 4px;
+    }
+    .consultingSystem {
+        padding: 40px;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .consultingSystem h2 {
+        font-size: 34px;
+        line-height: 1;
+    }
+    .consultingSystem h3 {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .consultingSystem p {
+        font-size: 18px;
+    }
+    .consultingSystem .System_content,
+    .consultingSystem .supportive_systems {
+        justify-content: center;
+        gap: 2rem;
+    }
+    .supportive_systems .System_card {
+        padding: 1rem;
+    }
+    footer {
+        padding: 3rem 3rem 0;
+        margin-top: 0;
+    }
+    footer .system_contact {
+        grid-template-columns: auto;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    header{
+        /* grid-template-columns: auto; */
+        padding: 4rem 1rem 2rem;
+        margin-top: 0;
+        overflow: initial;
+    }
+    header .header_content h1 {
+        font-size: 40px;
+    }
+    header .header_content p {
+        font-size: 22px;
+    }
+
+    header .header_content a {
+        padding: 13.08px 35px;
+    }
+    header .header_img img {
+        position: relative;
+        top: auto;
+        max-width: 500px;
+    }
+    header .socialMedia_icons {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    .stores_icons img {
+        max-width: 120px;
+        border-radius: 4px;
+    }
+    .consultingSystem {
+        padding: 40px;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    .consultingSystem h2 {
+        line-height: 1;
+    }
+    .consultingSystem h3 {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    .consultingSystem p {
+        font-size: 18px;
+    }
+    .consultingSystem .System_content,
+    .consultingSystem .supportive_systems {
+        gap: 1rem;
+    }
+    .supportive_systems .System_card {
+        padding: 1rem;
+    }
+    footer {
+        padding: 3rem 3rem 0;
+        margin-top: 0;
+    }
+    footer .system_contact {
+        grid-template-columns: auto;
+    }
+}
